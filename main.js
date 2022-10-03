@@ -53,18 +53,18 @@ $(document).ready(function () {
   });
 
   kgs.on('input', (e) => {
-    rub.val(kgs.val() * kgsToRub);
-    usd.val(kgs.val() * kgsToUsd);
+    rub.val((kgs.val() * kgsToRub).toFixed(2));
+    usd.val((kgs.val() * kgsToUsd).toFixed(2));
   });
 
   rub.on('input', (e) => {
-    kgs.val(rub.val() * rubToKgs);
-    usd.val(rub.val() * usdToRub);
+    kgs.val((rub.val() * rubToKgs).toFixed(2));
+    usd.val((rub.val() * usdToRub).toFixed(2));
   });
 
   usd.on('input', (e) => {
-    kgs.val(usd.val() * usdToKgs);
-    rub.val(usd.val() * rubToUsd);
+    kgs.val((usd.val() * usdToKgs).toFixed(2));
+    rub.val((usd.val() * rubToUsd).toFixed(2));
   });
 
 });
