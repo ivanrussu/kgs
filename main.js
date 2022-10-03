@@ -44,6 +44,12 @@ $(document).ready(function () {
     input.inputFilter(function (value) {
       return /^-?\d*[.,]?\d*$/.test(value);
     }, "Must be a floating (real) number");
+
+    input.focus(function () {
+      $(this).on("mouseup.a keyup.a", function (e) {
+        $(this).off("mouseup.a keyup.a").select();
+      });
+    });
   });
 
   kgs.on('input', (e) => {
